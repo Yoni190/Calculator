@@ -49,4 +49,7 @@ equal.addEventListener("click",()=>{
     screen.textContent = "";
     screen.append(operate(+firstNum, +secondNum, operator));
 });
+clear.addEventListener("click", ()=>{
+    screen.textContent = "";
+});
 console.log(operate(6,2,"+"));
