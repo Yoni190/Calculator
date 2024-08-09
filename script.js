@@ -1,6 +1,9 @@
 let firstNum, secondNum, operator;
 const numbers = document.querySelectorAll(".number");
 const screen = document.querySelector("#screen");
+const operators = document.querySelectorAll(".operator");
+const equal = document.querySelector("#equal");
+const clear = document.querySelector("#clear");
 
 function add(a, b){
     return a + b;
@@ -30,7 +33,20 @@ function populateScreen(e){
     const selected = e.target.innerHTML;
     screen.append(selected);
 }
+function getOperator(e){
+    firstNum = screen.textContent;
+    operator = e.target.innerHTML;
+    screen.textContent = "";
+}
 numbers.forEach(btn =>{
     btn.addEventListener("click", populateScreen);
+});
+operators.forEach(opr =>{
+    opr.addEventListener("click", getOperator);
+});
+equal.addEventListener("click",()=>{
+    secondNum = screen.textContent;
+    screen.textContent = "";
+    screen.append(operate(+firstNum, +secondNum, operator));
 });
 console.log(operate(6,2,"+"));
