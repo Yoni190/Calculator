@@ -37,3 +37,12 @@ body{
     width:100px;
     border-radius:5px;
 }
+.operator, #equal{
+    background-color: orange;
+}
+.number{
+    background-color: lightblue;
+}
+#clear{
+    background-color: yellow;
+}
